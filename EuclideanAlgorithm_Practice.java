@@ -1,10 +1,22 @@
 import java.util.*;
 public class EuclideanAlgorithm_Practice {
+    public static void typeOut(String text) {
+        for (int i = 0; i < text.length(); i++){
+            System.out.printf("%c", text.charAt(i));
+            try {
+                Thread.sleep(50);//0.5s pause between characters
+            }
+            catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        System.out.println();
+    }
     public static int gcdWithRecursion(int int1, int int2) {
         if (int2 == 0) return Math.abs(int1);
         else {
             int remainder = int1 % int2;
-            System.out.println(int1 + " = " + int2 + "(" + (int1 / int2) + 
+            typeOut(int1 + " = " + int2 + "(" + (int1 / int2) + 
             ") + " + remainder);
             return gcdWithRecursion(int2, remainder);
         }
@@ -12,13 +24,13 @@ public class EuclideanAlgorithm_Practice {
     public static int gcdWithWhileLoop(int int1, int int2) {
         int remainder = int1 % int2;
         while (remainder > 0) {
-            System.out.println(int1 + " = " + int2 + "(" + (int1 / int2) + 
+            typeOut(int1 + " = " + int2 + "(" + (int1 / int2) + 
             ") + " + remainder);
             int1 = int2;
             int2 = remainder;
             remainder = int1 % int2;
         }
-        System.out.println(int1 + " = " + int2 + "(" + (int1 / int2) + ") + "
+        typeOut(int1 + " = " + int2 + "(" + (int1 / int2) + ") + "
         + remainder);
         return int2;
     }
@@ -34,8 +46,8 @@ public class EuclideanAlgorithm_Practice {
             remainder = int1 % int2;
         }
         if (pastGCD.size() == 0) {
-            System.out.println(int2 + " = " + int1 + "(0) + " + int2 + "(1)");
-            System.out.println("For the linear combination of " + int1 + "x + " 
+            typeOut(int2 + " = " + int1 + "(0) + " + int2 + "(1)");
+            typeOut("For the linear combination of " + int1 + "x + " 
             + int2 + "y, we have x = 0 and y = 1");
         }
         else {
@@ -46,7 +58,7 @@ public class EuclideanAlgorithm_Practice {
             int rightMultiplier = pastGCD.get(iter)[2] * -1;
             int tracker = 0;
             while (iter > -1) {
-                System.out.println(int2 + " = " + leftNum + "(" + 
+                typeOut(int2 + " = " + leftNum + "(" + 
                 leftMultiplier + ") + " + rightNum + "(" + 
                 rightMultiplier + ")");
                 iter--;
@@ -69,28 +81,29 @@ public class EuclideanAlgorithm_Practice {
                 int tempLeftMultiplier = leftMultiplier;
                 leftMultiplier = rightMultiplier;
                 rightMultiplier = tempLeftMultiplier;
-                System.out.println(int2 + " = " + leftNum + "(" + 
+                typeOut(int2 + " = " + leftNum + "(" + 
                 leftMultiplier + ") + " + rightNum + "(" + 
                 rightMultiplier + ")");
             }
-            System.out.println("For the linear combination of " + leftNum +
+            typeOut("For the linear combination of " + leftNum +
             "x + " + rightNum + "y, we have x = " + leftMultiplier + " and y = "
             + rightMultiplier);
         }
     }
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
-        System.out.println("First number for gcd:");
+        typeOut("First number for gcd:");
         int num1 = scnr.nextInt();
-        System.out.println("Second number for gcd:");
+        typeOut("Second number for gcd:");
         int num2 = scnr.nextInt();
-        System.out.println("\nFirst using Recursion to find GCD...");
-        System.out.println("The gcd of " + num1 + " and " + num2
+        typeOut("\nFirst using Recursion to find GCD...");
+        typeOut("The gcd of " + num1 + " and " + num2
         + " is " + gcdWithRecursion(num1, num2));
-        System.out.println("\nNow using a While Loop to find GCD...");
-        System.out.println("The gcd of " + num1 + " and " + num2
+        typeOut("\nNow using a While Loop to find GCD...");
+        typeOut("The gcd of " + num1 + " and " + num2
         + " is " + gcdWithWhileLoop(num1, num2));
-        System.out.println("\nNow finding Linear Combination...");
+        typeOut("\nNow finding Linear Combination...");
         linearCombination(num1, num2);
+        scnr.close();
     }
 }
