@@ -3,7 +3,7 @@ def typeOut(text):
     for char in text:
         sleep(0.05)
         print(char, end = "", flush = True)
-    print("\n")
+    print()
 def gcdWithRecursion(int1, int2):
     if int2 == 0:
         return abs(int1)
@@ -54,10 +54,10 @@ def linearCombination(int1, int2):
             rightNum, leftNum, rightMultiplier, leftMultiplier = leftNum, rightNum,leftMultiplier, rightMultiplier
             typeOut(f"{int2} = {leftNum}({leftMultiplier}) + {rightNum}({rightMultiplier})")
         typeOut(f"For the linear combination of {leftNum}x + {rightNum}y, we have x = {leftMultiplier} and y = {rightMultiplier}")
-
-num1 = int(input("First number for gcd:\n"))
-num2 = int(input("Second number for gcd:\n"))
-
+typeOut("First number for gcd:")
+num1 = int(input())
+typeOut("Second number for gcd:")
+num2 = int(input())
 # Using the recursive function to find GCD
 typeOut("\nFirst using Recursion to find GCD...")
 typeOut(f"The gcd of {num1} and {num2} is {gcdWithRecursion(num1, num2)}")
