@@ -98,12 +98,12 @@ public class EuclideanAlgorithm_Practice {
         int num2 = scnr.nextInt();
         // Using the recursive function to find GCD
         typeOut("\nFirst using Recursion to find GCD...");
-        typeOut("The gcd of " + num1 + " and " + num2
-        + " is " + gcdWithRecursion(num1, num2));
+        typeOut("The gcd of " + num1 + " and " + num2 + " is " + 
+        gcdWithRecursion(num1, num2));
         // Using a while loop to find GCD
         typeOut("\nNow using a While Loop to find GCD...");
-        typeOut("The gcd of " + num1 + " and " + num2
-        + " is " + gcdWithWhileLoop(num1, num2));
+        typeOut("The gcd of " + num1 + " and " + num2 + " is " + 
+        gcdWithWhileLoop(num1, num2));
         // Turns out you need to use the while loop method to find the linear 
         // combination
         typeOut("\nNow finding Linear Combination...");
