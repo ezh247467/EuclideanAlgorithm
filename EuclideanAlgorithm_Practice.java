@@ -35,8 +35,7 @@ public class EuclideanAlgorithm_Practice {
         return int2;
     }
     public static void linearCombination(int int1, int int2) {
-        int tempInt = int1;
-        int remainder = int1 % int2;
+        int tempInt = int1, remainder = int1 % int2;
         ArrayList<Integer[]> pastGCD = new ArrayList<>();
         while (remainder > 0) {
             int quotient = int1 / int2;
@@ -51,12 +50,9 @@ public class EuclideanAlgorithm_Practice {
             + int2 + "y, we have x = 0 and y = 1");
         }
         else {
-            int iter = pastGCD.size() - 1;
-            int leftNum = pastGCD.get(iter)[0];
-            int rightNum = pastGCD.get(iter)[1];
-            int leftMultiplier = 1;
-            int rightMultiplier = pastGCD.get(iter)[2] * -1;
-            int tracker = 0;
+            int iter = pastGCD.size() - 1, tracker = 0;
+            int leftNum = pastGCD.get(iter)[0], rightNum = pastGCD.get(iter)[1];
+            int leftMultiplier = 1, rightMultiplier = pastGCD.get(iter)[2] * -1;
             while (iter > -1) {
                 typeOut(int2 + " = " + leftNum + "(" + 
                 leftMultiplier + ") + " + rightNum + "(" + 
