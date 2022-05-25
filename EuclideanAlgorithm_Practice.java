@@ -5,7 +5,7 @@ public class EuclideanAlgorithm_Practice {
             try {
                 Thread.sleep(50);
             }
-            catch (InterruptedException ex) {
+            catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
             System.out.printf("%c", text.charAt(i));
