@@ -1,8 +1,8 @@
 from time import sleep
 def typeOut(text):
-    for char in text:
+    for character in text:
         sleep(0.05)
-        print(char, end = "", flush = True)
+        print(character, end = "", flush = True)
 def typeOutLine(text):
     typeOut(text)
     print()

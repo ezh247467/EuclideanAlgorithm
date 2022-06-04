@@ -1,14 +1,14 @@
 import java.util.*;
 public class EuclideanAlgorithm_Practice {
     public static void typeOut(String text) {
-        for (int i = 0; i < text.length(); i++) {
+        for (int character = 0; character < text.length(); character++) {
             try {
                 Thread.sleep(50);
             }
             catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-            System.out.printf("%c", text.charAt(i));
+            System.out.printf("%c", text.charAt(character));
         }
     }
     public static void typeOutLine(String text) {
