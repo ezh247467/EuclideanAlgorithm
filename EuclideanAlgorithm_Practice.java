@@ -41,8 +41,7 @@ public class EuclideanAlgorithm_Practice {
         int tempInt = int1, remainder = int1 % int2;
         ArrayList<Integer[]> pastGCD = new ArrayList<>();
         while (remainder > 0) {
-            int quotient = int1 / int2;
-            pastGCD.add(new Integer[] {int1, int2, quotient});
+            pastGCD.add(new Integer[] {int1, int2, int1 / int2});
             int1 = int2;
             int2 = remainder;
             remainder = int1 % int2;
