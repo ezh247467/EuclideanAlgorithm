@@ -11,7 +11,7 @@ public class EuclideanAlgorithm_Practice {
             System.out.printf("%c", text.charAt(character));
         }
     }
-    public static void typeOutLine(String text) {
+    public static void typeOutLn(String text) {
         typeOut(text);
         System.out.println();
     }
@@ -19,7 +19,7 @@ public class EuclideanAlgorithm_Practice {
         if (int2 == 0) return Math.abs(int1);
         else {
             int remainder = int1 % int2;
-            typeOutLine(int1 + " = " + int2 + "(" + (int1 / int2) + 
+            typeOutLn(int1 + " = " + int2 + "(" + (int1 / int2) + 
             ") + " + remainder);
             return gcdWithRecursion(int2, remainder);
         }
@@ -27,13 +27,13 @@ public class EuclideanAlgorithm_Practice {
     public static int gcdWithWhileLoop(int int1, int int2) {
         int remainder = int1 % int2;
         while (remainder > 0) {
-            typeOutLine(int1 + " = " + int2 + "(" + (int1 / int2) + 
+            typeOutLn(int1 + " = " + int2 + "(" + (int1 / int2) + 
             ") + " + remainder);
             int1 = int2;
             int2 = remainder;
             remainder = int1 % int2;
         }
-        typeOutLine(int1 + " = " + int2 + "(" + (int1 / int2) + ") + "
+        typeOutLn(int1 + " = " + int2 + "(" + (int1 / int2) + ") + "
         + remainder);
         return int2;
     }
@@ -47,8 +47,8 @@ public class EuclideanAlgorithm_Practice {
             remainder = int1 % int2;
         }
         if (pastGCD.size() == 0) {
-            typeOutLine(int2 + " = " + int1 + "(0) + " + int2 + "(1)");
-            typeOutLine("For the linear combination of " + int1 + "x + " 
+            typeOutLn(int2 + " = " + int1 + "(0) + " + int2 + "(1)");
+            typeOutLn("For the linear combination of " + int1 + "x + " 
             + int2 + "y, we have x = 0 and y = 1");
         }
         else {
@@ -56,7 +56,7 @@ public class EuclideanAlgorithm_Practice {
             int leftNum = pastGCD.get(iter)[0], rightNum = pastGCD.get(iter)[1];
             int leftMultiplier = 1, rightMultiplier = pastGCD.get(iter)[2] * -1;
             while (iter > -1) {
-                typeOutLine(int2 + " = " + leftNum + "(" + 
+                typeOutLn(int2 + " = " + leftNum + "(" + 
                 leftMultiplier + ") + " + rightNum + "(" + 
                 rightMultiplier + ")");
                 iter--;
@@ -79,11 +79,11 @@ public class EuclideanAlgorithm_Practice {
                 int tempLeftMultiplier = leftMultiplier;
                 leftMultiplier = rightMultiplier;
                 rightMultiplier = tempLeftMultiplier;
-                typeOutLine(int2 + " = " + leftNum + "(" + 
+                typeOutLn(int2 + " = " + leftNum + "(" + 
                 leftMultiplier + ") + " + rightNum + "(" + 
                 rightMultiplier + ")");
             }
-            typeOutLine("For the linear combination of " + leftNum +
+            typeOutLn("For the linear combination of " + leftNum +
             "x + " + rightNum + "y, we have x = " + leftMultiplier + " and y = "
             + rightMultiplier);
         }
@@ -95,14 +95,14 @@ public class EuclideanAlgorithm_Practice {
         typeOut("Second number for gcd: ");
         int num2 = scnr.nextInt();
         // Using the recursive function to find GCD
-        typeOutLine("\nFirst using Recursion to find GCD...");
-        typeOutLine("The gcd of " + num1 + " and " + num2 + " is " + 
+        typeOutLn("\nFirst using Recursion to find GCD...");
+        typeOutLn("The gcd of " + num1 + " and " + num2 + " is " + 
         gcdWithRecursion(num1, num2));
         // Using a while loop to find GCD
-        typeOutLine("\nNow using a While Loop to find GCD...");
-        typeOutLine("The gcd of " + num1 + " and " + num2 + " is " + 
+        typeOutLn("\nNow using a While Loop to find GCD...");
+        typeOutLn("The gcd of " + num1 + " and " + num2 + " is " + 
         gcdWithWhileLoop(num1, num2));
-        typeOutLine("\nNow finding Linear Combination...");
+        typeOutLn("\nNow finding Linear Combination...");
         linearCombination(num1, num2);
         scnr.close();
     }
