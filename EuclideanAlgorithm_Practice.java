@@ -88,6 +88,9 @@ public class EuclideanAlgorithm_Practice {
             + rightMultiplier);
         }
     }
+    public static int lcm(int int1, int int2) {
+        return int1 * int2 / gcdWithRecursion(int1, int2);
+    }
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
         typeOut("First number for gcd: ");
@@ -102,8 +105,10 @@ public class EuclideanAlgorithm_Practice {
         typeOutLn("\nNow using a While Loop to find GCD...");
         typeOutLn("The gcd of " + num1 + " and " + num2 + " is " + 
         gcdWithWhileLoop(num1, num2));
+        // Finding Linear Combination requires while loop version.
         typeOutLn("\nNow finding Linear Combination...");
         linearCombination(num1, num2);
+        typeOutLn("\nThe LCM of " + num1 + " and " + num2 + " is " + lcm(num1, num2) + ".");
         scnr.close();
     }
 }
