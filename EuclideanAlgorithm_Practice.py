@@ -5,6 +5,12 @@ def typeOut(text):
         print(character, end = "", flush = True)
 def typeOutLn(text):
     typeOut(f"{text}\n")
+def gcd(int1, int2):
+    if int2 == 0:
+        return abs(int1)
+    else:
+        remainder = int1 % int2
+        return gcd(int2, remainder)
 def gcdWithRecursion(int1, int2):
     if int2 == 0:
         return abs(int1)
@@ -55,7 +61,7 @@ def linearCombination(int1, int2):
             typeOutLn(f"{int2} = {leftNum}({leftMultiplier}) + {rightNum}({rightMultiplier})")
         typeOutLn(f"For the linear combination of {leftNum}x + {rightNum}y, we have x = {leftMultiplier} and y = {rightMultiplier}")
 def lcm(int1, int2):
-    return int1 * int2 // gcdWithRecursion(int1, int2)
+    return int1 * int2 // gcd(int1, int2)
 
 typeOut("First number for gcd: ")
 num1 = int(input())

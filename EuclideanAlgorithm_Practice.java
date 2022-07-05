@@ -15,6 +15,13 @@ public class EuclideanAlgorithm_Practice {
         typeOut(text);
         System.out.println();
     }
+    public static int gcd(int int1, int int2) {
+        if (int2 == 0) return Math.abs(int1);
+        else {
+            int remainder = int1 % int2;
+            return gcd(int2, remainder);
+        }
+    }
     public static int gcdWithRecursion(int int1, int int2) {
         if (int2 == 0) return Math.abs(int1);
         else {
@@ -89,7 +96,7 @@ public class EuclideanAlgorithm_Practice {
         }
     }
     public static int lcm(int int1, int int2) {
-        return int1 * int2 / gcdWithRecursion(int1, int2);
+        return int1 * int2 / gcd(int1, int2);
     }
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
