@@ -115,7 +115,8 @@ public class EuclideanAlgorithm_Practice {
         // Finding Linear Combination requires while loop version.
         typeOutLn("\nNow finding Linear Combination...");
         linearCombination(num1, num2);
-        typeOutLn("\nThe LCM of " + num1 + " and " + num2 + " is " + lcm(num1, num2) + ".");
+        typeOutLn("\nThe LCM of " + num1 + " and " + num2 + " is " + lcm(num1, 
+        num2) + ".");
         scnr.close();
     }
 }
