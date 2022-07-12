@@ -2,7 +2,7 @@ from time import sleep
 def typeOut(text):
     for character in text:
         sleep(0.05)
-        print(character, end = "", flush = True)
+        print(character, end="", flush=True)
 def typeOutLn(text):
     typeOut(f"{text}\n")
 def gcd(int1, int2):
