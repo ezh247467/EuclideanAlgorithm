@@ -11,10 +11,12 @@ public class EuclideanAlgorithm_Practice {
             System.out.printf("%c", text.charAt(character));
         }
     }
+
     public static void typeOutLn(String text) {
         typeOut(text);
         System.out.println();
     }
+
     public static int gcd(int int1, int int2) {
         if (int2 == 0) return Math.abs(int1);
         else {
@@ -22,6 +24,7 @@ public class EuclideanAlgorithm_Practice {
             return gcd(int2, remainder);
         }
     }
+
     public static int gcdWithRecursion(int int1, int int2) {
         if (int2 == 0) return Math.abs(int1);
         else {
@@ -31,6 +34,7 @@ public class EuclideanAlgorithm_Practice {
             return gcdWithRecursion(int2, remainder);
         }
     }
+
     public static int gcdWithWhileLoop(int int1, int int2) {
         int remainder = int1 % int2;
         while (remainder > 0) {
@@ -44,6 +48,7 @@ public class EuclideanAlgorithm_Practice {
         + remainder);
         return int2;
     }
+
     public static void linearCombination(int int1, int int2) {
         int tempInt = int1, remainder = int1 % int2;
         ArrayList<Integer[]> pastGCD = new ArrayList<>();
@@ -95,27 +100,36 @@ public class EuclideanAlgorithm_Practice {
             + rightMultiplier);
         }
     }
+
     public static int lcm(int int1, int int2) {
         return int1 * int2 / gcd(int1, int2);
     }
+
     public static void main(String[] args) {
+        // Taking user input
         Scanner scnr = new Scanner(System.in);
         typeOut("First number for gcd: ");
         int num1 = scnr.nextInt();
         typeOut("Second number for gcd: ");
         int num2 = scnr.nextInt();
+
         // Using the recursive function to find GCD
         typeOutLn("\nFirst using Recursion to find GCD...");
         typeOutLn("The gcd of " + num1 + " and " + num2 + " is " + 
         gcdWithRecursion(num1, num2));
+
         // Using a while loop to find GCD
         typeOutLn("\nNow using a While Loop to find GCD...");
         typeOutLn("The gcd of " + num1 + " and " + num2 + " is " + 
         gcdWithWhileLoop(num1, num2));
+
         // Finding Linear Combination requires while loop version.
         typeOutLn("\nNow finding Linear Combination...");
         linearCombination(num1, num2);
-        typeOutLn("\nThe LCM of " + num1 + " and " + num2 + " is " + lcm(num1, 
+        
+        // Finding the LCM
+        typeOutLn("\nNow finding the LCM...");
+        typeOutLn("The LCM of " + num1 + " and " + num2 + " is " + lcm(num1, 
         num2) + ".");
         scnr.close();
     }

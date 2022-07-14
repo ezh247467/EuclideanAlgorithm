@@ -11,10 +11,12 @@ void typeOut(string text) {
         cout << text[character] << flush;
     }
 }
+
 void typeOutLn(string text) {
     typeOut(text);
     cout << endl;
 }
+
 int gcd(int int1, int int2) {
     if (int2 == 0) return abs(int1);
     else {
@@ -22,6 +24,7 @@ int gcd(int int1, int int2) {
         return gcd(int2, remainder);
     }
 }
+
 int gcdWithRecursion(int int1, int int2) {
     if (int2 == 0) return abs(int1);
     else {
@@ -31,6 +34,7 @@ int gcdWithRecursion(int int1, int int2) {
         return gcdWithRecursion(int2, remainder);
     }
 }
+
 int gcdWithWhileLoop(int int1, int int2) {
     int remainder = int1 % int2;
     while (remainder > 0) {
@@ -44,6 +48,7 @@ int gcdWithWhileLoop(int int1, int int2) {
     (int1 / int2)) + ") + " + to_string(remainder));
     return int2;
 }
+
 void linearCombination(int int1, int int2) {
     int tempInt = int1, remainder = int1 % int2;
     vector<vector<int> > pastGCD;
@@ -99,27 +104,36 @@ void linearCombination(int int1, int int2) {
         (leftMultiplier) + " and y = " + to_string(rightMultiplier));
     }
 }
+
 int lcm(int int1, int int2) {
     return int1 * int2 / gcd(int1, int2);
 }
+
 int main() {
+    // Taking user input
     int num1, num2;
     typeOut("First number for gcd: ");
     cin >> num1;
     typeOut("Second number for gcd: ");
     cin >> num2;
+
     // Using the recursive function to find GCD
     typeOutLn("\nFirst using Recursion to find GCD...");
     typeOutLn("The gcd of " + to_string(num1) + " and " + to_string(num2) 
     + " is " + to_string(gcdWithRecursion(num1, num2)));
+
     // Using a while loop to find GCD
     typeOutLn("\nNow using a While Loop to find GCD...");
     typeOutLn("The gcd of " + to_string(num1) + " and " + to_string(num2) 
     + " is " + to_string(gcdWithWhileLoop(num1, num2)));
+
     // Finding Linear Combination requires while loop version.
     typeOutLn("\nNow finding Linear Combination...");
     linearCombination(num1, num2);
-    typeOutLn("\nThe LCM of " + to_string(num1) + " and " + to_string(num2) 
+
+    // Finding the LCM
+    typeOutLn("\nNow finding the LCM...");
+    typeOutLn("The LCM of " + to_string(num1) + " and " + to_string(num2) 
     + " is " + to_string(lcm(num1, num2)) + ".");
     return 0;
 }
